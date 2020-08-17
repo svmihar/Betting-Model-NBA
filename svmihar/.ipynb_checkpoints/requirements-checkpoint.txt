@@ -1,0 +1,7 @@
+turicreate
+fastai
+lightgbm
+optuna
+pandas
+xgboost
+scikit-surprise
