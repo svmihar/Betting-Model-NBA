@@ -1,4 +1,4 @@
 {
-    "python.pythonPath": "C:\\Users\\Graham\\AppData\\Local\\Programs\\Python\\Python38-32\\python.exe",
+    "python.pythonPath": "/Users/svmihar/miniconda/envs/scraping/bin/python",
     "python.formatting.provider": "black"
 }

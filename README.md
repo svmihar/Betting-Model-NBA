@@ -7,19 +7,19 @@ Sports betting predictive modelling project
 
 By: PerryGraham & alden-august-wang
 
-The initial purpose of this project is to predict the Over-Under of an NBA game. 
+The initial purpose of this project is to predict the Over-Under of an NBA game.
 
 # Data collection:
-Data downloaded from Kaggle from Nathan Lauga. 
+Data downloaded from Kaggle from Nathan Lauga.
 # Data cleaning:
 * Added a point total column
-* Exculded data before 2018 season 
+* Exculded data before 2018 season
 * Removed null values
-* Sorted by date 
+* Sorted by date
 * Combined data from team ranking history
-* Encoded team IDs and Season 
+* Encoded team IDs and Season
 # Data insight & visuals:
-* Opened cleaned data file with Tableau to explore the dataset 
+* Opened cleaned data file with Tableau to explore the dataset
     + Median total points = 221
     + Upper hinge = 235, lower hinge = 168
 # Feature engineering:
@@ -32,3 +32,31 @@ Data downloaded from Kaggle from Nathan Lauga.
 # Cross valiation:
 
 # Results:
+
+
+# svmihar's approach
+## problem statement
+given 2 distinct teams, what is the score?
+f(x,y) = P(x|y)
+
+or, to oversimplify, this is basically a recommendation engine, like **the movies / books dataset.**
+
+## data
+columns: `team_a, team_b, date, score`
+
+## approach
+[matrix factorization](https://en.wikipedia.org/wiki/Matrix_factorization_(recommender_systems))
+using apple's turicreate
+[xgbregressor]()
+using xgboost
+[lightgbm]()
+using lightgbm
+[fastai collab]()
+    [collaborative filtering]()
+
+
+## future improvements
+- add more features
+    - win streak
+    - player stats (with a player scoring function)
+    - ??
