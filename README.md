@@ -52,7 +52,7 @@ using xgboost
 [lightgbm]()
 using lightgbm
 [fastai collab]()
-    [collaborative filtering]()
+    [collaborative filtering](https://realpython.com/build-recommendation-engine-collaborative-filtering/)
 
 
 ## future improvements
