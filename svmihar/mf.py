@@ -1,5 +1,4 @@
 import turicreate as tc
-<<<<<<< HEAD
 from sklearn.metrics import mean_absolute_error
 from data import train_df, test_df
 

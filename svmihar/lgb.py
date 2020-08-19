@@ -1,15 +1,10 @@
-import pandas as pd
 from sklearn.metrics import accuracy_score
-from xg import X_train, X_test, y_train, y_test
-import joblib
 import numpy as np
-from pathlib import Path
+import joblib
 from optuna.integration.lightgbm import lgb
+from data import X_train, X_test, y_train, y_test
 
 if __name__ == "__main__":
-    import pdb
-
-    pdb.set_trace()
     dtrain = lgb.Dataset(X_train, label=y_train)
     dval = lgb.Dataset(X_test, label=y_test)
 
