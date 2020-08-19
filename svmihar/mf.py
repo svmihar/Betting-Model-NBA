@@ -1,8 +1,10 @@
 import turicreate as tc
+<<<<<<< HEAD
 from sklearn.metrics import mean_absolute_error
 from data import train_df, test_df
 
 train, val = tc.SFrame(train_df), tc.SFrame(test_df)
+
 
 if __name__ == "__main__":
     model1 = tc.recommender.factorization_recommender.create(
@@ -20,4 +22,3 @@ if __name__ == "__main__":
     score1 = mean_absolute_error(y_pred1, val["score"])
     score2 = mean_absolute_error(y_pred2, val["score"])
 
-    print(score1, score2)

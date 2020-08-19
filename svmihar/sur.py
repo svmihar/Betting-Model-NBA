@@ -18,8 +18,6 @@ param_grid = {
     "verbose": [True],
 }
 gs = GridSearchCV(SVD, param_grid, measures=["mae"])
-pdb.set_trace()
-
 gs.fit(data)
 
 print(gs.best_score["mae"])
