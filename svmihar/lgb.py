@@ -7,7 +7,9 @@ from pathlib import Path
 from optuna.integration.lightgbm import lgb
 
 if __name__ == "__main__":
-    import pdb; pdb.set_trace()
+    import pdb
+
+    pdb.set_trace()
     dtrain = lgb.Dataset(X_train, label=y_train)
     dval = lgb.Dataset(X_test, label=y_test)
 
@@ -15,7 +17,7 @@ if __name__ == "__main__":
         "objective": "regression_l1",
         "metric": "mae",
         "verbosity": 2,
-        "boosting_type":"dart" 
+        "boosting_type": "dart",
     }
 
     model = lgb.train(

@@ -1,26 +1,19 @@
 import numpy as np
 import xgboost as xgb
-import pdb
-import joblib
 from sklearn.metrics import mean_absolute_error
 import optuna
-import pandas as pd
-from mf import train,val
+from data import X_train, X_test, y_train, y_test
 
-features = ['team_a', 'team_b', 'sidefeature1', 'sidefeature2']
-X_train=train[[*features]].to_dataframe()
-y_train=train['score'].to_numpy()
-
-X_test = val[[*features]].to_dataframe()
-y_test = val[['score']].to_numpy()
 
 def objective(trial):
-    dtrain = xgb.DMatrix(X_train, label=y_train)
-    dvalid = xgb.DMatrix(X_test, label=y_test)
+    dtrain = xgb.DMatrix(X_train.values, label=y_train.values)
+    dvalid = xgb.DMatrix(X_test.values, label=y_test.values)
 
     param = {
-        "objective": trial.suggest_categorical("objective", ['reg:squaredlogerror', 'reg:squarederror'  ]),
-        "eval_metric": 'mae',
+        "objective": trial.suggest_categorical(
+            "objective", ["reg:squaredlogerror", "reg:squarederror"]
+        ),
+        "eval_metric": "mae",
         "booster": trial.suggest_categorical("booster", ["gbtree", "gblinear", "dart"]),
         "lambda": trial.suggest_float("lambda", 1e-8, 10.0, log=True),
         "alpha": trial.suggest_float("alpha", 1e-8, 10.0, log=True),
